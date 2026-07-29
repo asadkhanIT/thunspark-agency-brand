@@ -28,12 +28,12 @@ export function Footer() {
             <h4 className="font-display text-sm font-medium text-foreground">Navigation</h4>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
               {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About" },
                 { to: "/services", label: "Services" },
-                { to: "/products", label: "Products" },
+                { to: "/case-studies", label: "Case Studies" },
+                { to: "/about", label: "About" },
                 { to: "/contact", label: "Contact" },
               ].map((l) => (
+
                 <li key={l.to}>
                   <Link to={l.to} className="transition-colors hover:text-foreground">
                     {l.label}
