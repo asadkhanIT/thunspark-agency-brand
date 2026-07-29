@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Workflow, Target, Database, Mail, Users, Settings2, Check,
+  Share2, Target, Search, MonitorSmartphone, Users, Settings2, Check,
 } from "lucide-react";
 import { Section, SectionLabel, Reveal } from "../components/ui-primitives";
 import { CTASection } from "./index";
@@ -8,10 +8,12 @@ import { CTASection } from "./index";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — ThunSpark" },
-      { name: "description", content: "AI workflow, lead gen, CRM, email, recruitment, and business process automation — engineered for scale." },
-      { property: "og:title", content: "Services — ThunSpark" },
-      { property: "og:description", content: "Six automation capabilities, one unified system." },
+      { title: "Services — ThunSpark Digital Marketing" },
+      { name: "description", content: "Social media, paid ads, SEO, website design, lead generation and marketing automation — built around your goals, not a generic package." },
+      { property: "og:title", content: "Services — ThunSpark Digital Marketing" },
+      { property: "og:description", content: "Marketing that actually moves your business forward." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Services,
@@ -19,40 +21,40 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    Icon: Workflow, title: "AI Workflow Automation",
-    description: "Replace fragmented manual processes with intelligent, end-to-end workflows that connect every tool in your stack.",
-    benefits: ["Eliminates repetitive tasks", "Cross-platform orchestration", "Real-time monitoring"],
-    useCases: ["Operations handoffs", "Approval routing", "Data syncing across SaaS tools"],
+    Icon: Share2, title: "Social Media Marketing",
+    description: "We help people discover your business before they discover your competitors.",
+    benefits: ["Content people actually stop for", "A page that looks like a real brand", "Steady growth, not one-off spikes"],
+    useCases: ["Instagram", "Facebook", "LinkedIn", "X", "Content Creation", "Community Management", "Brand Growth"],
   },
   {
-    Icon: Target, title: "Lead Generation Automation",
-    description: "Continuously discover, qualify, and engage prospects through AI-powered enrichment and outreach systems.",
-    benefits: ["Higher-quality pipeline", "Reduced manual research", "Faster response times"],
-    useCases: ["Outbound prospecting", "ICP enrichment", "Multi-channel sequences"],
+    Icon: Target, title: "Performance Marketing",
+    description: "Run smarter ads that bring better customers — not just cheap clicks.",
+    benefits: ["Every campaign tied to a business goal", "Clear reporting you can read in a minute", "Budget spent where it converts"],
+    useCases: ["Google Ads", "Meta Ads", "LinkedIn Ads", "Remarketing", "Landing Pages", "Conversion Optimization"],
   },
   {
-    Icon: Database, title: "CRM Automation",
-    description: "Keep your CRM accurate, up-to-date, and actionable with automated data hygiene and pipeline management.",
-    benefits: ["Clean data 24/7", "Automated follow-ups", "Better forecasting"],
-    useCases: ["HubSpot / Salesforce sync", "Deal stage automation", "Activity logging"],
+    Icon: Search, title: "Search Engine Optimization",
+    description: "Show up when customers are already looking for businesses like yours.",
+    benefits: ["Traffic that keeps coming without ad spend", "Found by people ready to buy", "Stronger trust from day one"],
+    useCases: ["Keyword Research", "Technical SEO", "Local SEO", "Content SEO"],
   },
   {
-    Icon: Mail, title: "Email Automation",
-    description: "Send the right message at the right moment with behavior-driven, personalized email sequences that convert.",
-    benefits: ["Higher open & reply rates", "Personalized at scale", "Lifecycle coverage"],
-    useCases: ["Nurture campaigns", "Trigger-based sequences", "Re-engagement"],
+    Icon: MonitorSmartphone, title: "Website Design",
+    description: "Your website should work as your best salesperson.",
+    benefits: ["Fast and mobile friendly", "Built to convert, not just look pretty", "Easy for you to update"],
+    useCases: ["Landing Pages", "Business Websites", "Conversion Focused Design", "Modern, Clean Layouts"],
   },
   {
-    Icon: Users, title: "Recruitment Automation",
-    description: "Streamline hiring from candidate intake to interview scheduling — without losing the human touch.",
-    benefits: ["Faster time-to-hire", "Less recruiter admin", "Better candidate experience"],
-    useCases: ["Resume screening", "Interview scheduling", "Talent pool nurture"],
+    Icon: Users, title: "Lead Generation",
+    description: "Stop waiting for customers to find you. We'll help you find them.",
+    benefits: ["A predictable flow of conversations", "Better fit prospects", "Less time chasing dead ends"],
+    useCases: ["LinkedIn Outreach", "Cold Email", "Appointment Setting", "Sales Funnels"],
   },
   {
-    Icon: Settings2, title: "Business Process Automation",
-    description: "Audit, redesign, and automate the operational backbone of your business with custom internal systems.",
-    benefits: ["Reduced operational cost", "Faster cycle times", "Audit-ready workflows"],
-    useCases: ["Finance & ops", "Internal reporting", "Vendor management"],
+    Icon: Settings2, title: "Marketing Automation",
+    description: "Work less. Grow more.",
+    benefits: ["Nothing falls through the cracks", "Faster follow-up means more sales", "Your team focuses on real conversations"],
+    useCases: ["Automated follow-ups", "Lead nurturing", "CRM workflows", "Email automation", "AI-powered marketing systems"],
   },
 ];
 
@@ -63,10 +65,10 @@ function Services() {
         <Reveal>
           <SectionLabel>Services</SectionLabel>
           <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
-            Automation services engineered for <span className="text-gradient">measurable outcomes.</span>
+            Marketing that actually <span className="text-gradient">moves your business forward.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
-            We design, build, and operate AI-powered automation systems across the workflows that matter most to your business.
+            Every business is different. That's why we don't force the same marketing package on everyone. We build strategies based on where you are today and where you want to go.
           </p>
         </Reveal>
       </section>
@@ -87,7 +89,7 @@ function Services() {
 
                 <div className="grid gap-5">
                   <div className="rounded-2xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-7">
-                    <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Benefits</h3>
+                    <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">What it does for you</h3>
                     <ul className="mt-5 space-y-3">
                       {s.benefits.map((b) => (
                         <li key={b} className="flex items-start gap-3 text-sm">
@@ -100,7 +102,7 @@ function Services() {
                     </ul>
                   </div>
                   <div className="rounded-2xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-7">
-                    <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Use Cases</h3>
+                    <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">What's included</h3>
                     <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
                       {s.useCases.map((u) => (
                         <li key={u} className="flex items-start gap-3">
