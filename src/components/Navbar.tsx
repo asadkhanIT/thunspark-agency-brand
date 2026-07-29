@@ -6,10 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/products", label: "Products" },
+  { to: "/case-studies", label: "Case Studies" },
+  { to: "/about", label: "About" },
 ];
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,7 +60,7 @@ export function Navbar() {
             to="/contact"
             className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_8px_30px_-8px_rgba(255,237,105,0.5)] md:inline-flex"
           >
-            Contact Us
+            Book a Free Strategy Call
           </Link>
           <button
             aria-label="Toggle menu"
@@ -95,7 +96,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex justify-center rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground"
               >
-                Contact Us
+                Book a Free Strategy Call
               </Link>
             </div>
           </motion.div>

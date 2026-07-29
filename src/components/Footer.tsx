@@ -20,7 +20,7 @@ export function Footer() {
               <span className="font-display text-lg font-semibold">ThunSpark</span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              ThunSpark helps businesses automate operations and scale efficiently through AI-powered workflows.
+              We help businesses launch, grow, and scale online with marketing that actually brings customers.
             </p>
           </div>
 
@@ -28,12 +28,12 @@ export function Footer() {
             <h4 className="font-display text-sm font-medium text-foreground">Navigation</h4>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
               {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About" },
                 { to: "/services", label: "Services" },
-                { to: "/products", label: "Products" },
+                { to: "/case-studies", label: "Case Studies" },
+                { to: "/about", label: "About" },
                 { to: "/contact", label: "Contact" },
               ].map((l) => (
+
                 <li key={l.to}>
                   <Link to={l.to} className="transition-colors hover:text-foreground">
                     {l.label}
@@ -64,7 +64,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <span>© 2026 ThunSpark. All Rights Reserved.</span>
-          <span>Built to save time. Designed to scale.</span>
+          <span>Marketing made simple. Growth made real.</span>
         </div>
       </div>
     </footer>
