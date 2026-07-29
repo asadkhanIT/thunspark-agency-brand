@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, ArrowUpRight, Workflow, Target, Database, Mail, Users, Settings2,
-  Sparkles, Gauge, TrendingUp,
+  ArrowRight, ArrowUpRight, Share2, Target, Search, MonitorSmartphone, Users, Settings2,
 } from "lucide-react";
 import { HeroIllustration } from "../components/HeroIllustration";
 import { Section, SectionLabel, Reveal, GlassCard, fadeUp, stagger } from "../components/ui-primitives";
@@ -10,33 +9,47 @@ import { Section, SectionLabel, Reveal, GlassCard, fadeUp, stagger } from "../co
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ThunSpark — AI Automation Agency" },
-      { name: "description", content: "AI automation that eliminates repetitive work. ThunSpark builds intelligent systems for operations, lead gen, marketing, and customer communication." },
-      { property: "og:title", content: "ThunSpark — AI Automation Agency" },
-      { property: "og:description", content: "AI automation that eliminates repetitive work." },
+      { title: "ThunSpark — Digital Marketing That Brings Customers" },
+      { name: "description", content: "You built the business. We'll help the right people find it. Social media, ads, SEO, websites, lead generation and marketing automation — made simple." },
+      { property: "og:title", content: "ThunSpark — Digital Marketing That Brings Customers" },
+      { property: "og:description", content: "You built the business. We'll help the right people find it." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
 });
 
 const services = [
-  { Icon: Workflow, title: "AI Workflow Automation", desc: "Connect tools and orchestrate complex multi-step processes end-to-end." },
-  { Icon: Target, title: "Lead Generation Automation", desc: "Discover, qualify, and engage prospects without lifting a finger." },
-  { Icon: Database, title: "CRM Automation", desc: "Keep records, pipelines, and follow-ups perfectly synced automatically." },
-  { Icon: Mail, title: "Email Automation", desc: "Personalized, behavior-driven email sequences that actually convert." },
-  { Icon: Users, title: "Recruitment Automation", desc: "From intake to interview scheduling — fully streamlined hiring." },
-  { Icon: Settings2, title: "Business Process Automation", desc: "Replace repetitive operational work with intelligent systems." },
+  { Icon: Share2, title: "Social Media Marketing", desc: "Show up where your customers already spend their time — with content people actually stop for." },
+  { Icon: Target, title: "Performance Marketing", desc: "Ads that bring you buyers, not just clicks. Every rupee and dollar is tracked." },
+  { Icon: Search, title: "Search Engine Optimization", desc: "Get found when someone searches for exactly what you sell." },
+  { Icon: MonitorSmartphone, title: "Website Design", desc: "A fast, clean website that works like your best salesperson — day and night." },
+  { Icon: Users, title: "Lead Generation", desc: "Stop waiting for customers to find you. We'll go find them for you." },
+  { Icon: Settings2, title: "Marketing Automation", desc: "Follow-ups, reminders and nurture flows that run without you touching them." },
 ];
 
-const pillars = [
-  { Icon: Sparkles, title: "AI Automation", desc: "Production-grade AI workflows tailored to your operational reality." },
-  { Icon: Gauge, title: "Process Optimization", desc: "We audit, redesign, and rebuild your processes for compounding efficiency." },
-  { Icon: TrendingUp, title: "Business Growth", desc: "Systems that scale revenue and operations without scaling headcount." },
+const reasons = [
+  "We keep things simple.",
+  "No confusing marketing jargon.",
+  "Every strategy is built around your goals.",
+  "We care about real business growth, not vanity metrics.",
+  "We believe good communication builds long-term partnerships.",
+  "We combine creativity, marketing, and automation to help your business move faster.",
+];
+
+const steps = [
+  { step: "01", title: "We understand your business.", desc: "What you sell, who buys it, and what's getting in the way of more of it." },
+  { step: "02", title: "We create a strategy built around your goals.", desc: "No copy-paste packages. A plan that fits where you are right now." },
+  { step: "03", title: "We launch campaigns and optimize everything.", desc: "We watch the numbers weekly and keep improving what's working." },
+  { step: "04", title: "You get more visibility, better leads, and measurable growth.", desc: "Real results you can see in your calendar and your bank account." },
 ];
 
 const industries = [
-  "Recruitment Agencies", "Marketing Agencies", "Consulting Firms",
-  "Service Businesses", "E-commerce Brands", "B2B Companies",
+  "Healthcare", "Real Estate", "Restaurants & Cafés",
+  "Education", "Construction", "Professional Services",
+  "Manufacturing", "Technology", "E-commerce",
+  "Startups", "Local Businesses", "Corporate Companies",
 ];
 
 function Home() {
@@ -47,32 +60,32 @@ function Home() {
         <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-[1.1fr_1fr]">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.div variants={fadeUp}>
-              <SectionLabel>AI Automation Agency</SectionLabel>
+              <SectionLabel>Digital Marketing Solutions</SectionLabel>
             </motion.div>
             <motion.h1
               variants={fadeUp}
               className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              <span className="text-gradient">Replace Manual</span>
-              <br />Operations With
-              <br />AI Powered Systems
+              <span className="text-gradient">You built the business.</span>
+              <br />We'll help the right
+              <br />people find it.
             </motion.h1>
             <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
-              We automate your business processes so your team can focus on growing the business instead of repetitive work.
+              Whether you're launching something new or trying to grow faster, we help you get seen online, attract better customers, and turn attention into real business growth.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3 sm:mt-10">
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
               >
-                Book Free Consultation
+                Book a Free Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-glass px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/[0.07]"
               >
-                Explore Services
+                Explore Our Services
               </Link>
             </motion.div>
           </motion.div>
@@ -88,18 +101,36 @@ function Home() {
         </div>
       </section>
 
+      {/* TRUST */}
+      <Section>
+        <Reveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionLabel>Keeping it simple</SectionLabel>
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+              Marketing shouldn't feel complicated.
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              You're already busy running your business. The last thing you need is another agency throwing confusing reports and fancy marketing terms at you.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              We keep things simple. We help you get more visibility, more leads, and more customers while you stay focused on running your business.
+            </p>
+          </div>
+        </Reveal>
+      </Section>
+
       {/* SERVICES PREVIEW */}
       <Section>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
             <SectionLabel>What we do</SectionLabel>
             <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
-              Six automation capabilities. <span className="text-muted-foreground">One unified system.</span>
+              Everything you need to <span className="text-muted-foreground">grow online.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <Link to="/services" className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent">
-              View all services
+              See All Services
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </Reveal>
@@ -126,45 +157,12 @@ function Home() {
         </motion.div>
       </Section>
 
-      {/* WHY THUNSPARK */}
-      <Section>
-        <Reveal>
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionLabel>Why ThunSpark</SectionLabel>
-            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
-              Built To Save Time. <br className="hidden md:block" />
-              <span className="text-muted-foreground">Designed To Scale.</span>
-            </h2>
-          </div>
-        </Reveal>
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="mt-16 grid gap-6 md:grid-cols-3"
-        >
-          {pillars.map(({ Icon, title, desc }, i) => (
-            <motion.div key={title} variants={fadeUp}>
-              <GlassCard className="h-full">
-                <div className="flex items-center justify-between">
-                  <Icon className="h-6 w-6 text-accent" />
-                  <span className="font-display text-xs text-muted-foreground">0{i + 1}</span>
-                </div>
-                <h3 className="mt-10 text-xl font-medium">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
-              </GlassCard>
-            </motion.div>
-          ))}
-        </motion.div>
-      </Section>
-
       {/* INDUSTRIES */}
       <Section>
         <Reveal>
           <SectionLabel>Industries</SectionLabel>
           <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
-            Trusted across teams that move fast.
+            We work with businesses that want to grow.
           </h2>
         </Reveal>
         <motion.div
@@ -180,9 +178,69 @@ function Home() {
               variants={fadeUp}
               className="group relative bg-background p-6 sm:p-8 transition-colors hover:bg-glass"
             >
-              <div className="font-display text-xs text-muted-foreground">0{i + 1}</div>
+              <div className="font-display text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</div>
               <div className="mt-3 text-xl font-medium">{ind}</div>
               <ArrowUpRight className="absolute right-6 top-6 h-4 w-4 text-muted-foreground opacity-0 transition-all group-hover:opacity-100 group-hover:text-accent" />
+            </motion.div>
+          ))}
+        </motion.div>
+        <Reveal delay={0.1}>
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            No matter your industry, if your goal is to grow online, we're here to help.
+          </p>
+        </Reveal>
+      </Section>
+
+      {/* WHY THUNSPARK */}
+      <Section>
+        <Reveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionLabel>Why ThunSpark</SectionLabel>
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+              Why businesses choose us.
+            </h2>
+          </div>
+        </Reveal>
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {reasons.map((r, i) => (
+            <motion.div key={r} variants={fadeUp}>
+              <GlassCard className="h-full">
+                <span className="font-display text-xs text-accent">0{i + 1}</span>
+                <p className="mt-8 text-lg font-medium leading-snug">{r}</p>
+              </GlassCard>
+            </motion.div>
+          ))}
+        </motion.div>
+      </Section>
+
+      {/* PROCESS */}
+      <Section>
+        <Reveal>
+          <SectionLabel>Our Process</SectionLabel>
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+            Here's how we work together.
+          </h2>
+        </Reveal>
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {steps.map((s) => (
+            <motion.div key={s.step} variants={fadeUp}>
+              <GlassCard className="h-full">
+                <div className="font-display text-xs text-accent">{s.step}</div>
+                <h3 className="mt-6 text-lg font-medium leading-snug">{s.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              </GlassCard>
             </motion.div>
           ))}
         </motion.div>
@@ -202,11 +260,10 @@ export function CTASection() {
           <div className="relative grid items-center gap-8 md:grid-cols-[1.5fr_1fr]">
             <div>
               <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
-
-                Ready to put your business on autopilot?
+                Ready to grow your business online?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-                We'll identify repetitive tasks in your business and show you how AI can automate them to save time and increase productivity.
+                Let's have a conversation. No pressure. No sales tricks. Just honest advice about how your business can grow.
               </p>
             </div>
             <div className="flex md:justify-end">
@@ -214,7 +271,7 @@ export function CTASection() {
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
               >
-                Book Free Consultation
+                Book a Free Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </div>
