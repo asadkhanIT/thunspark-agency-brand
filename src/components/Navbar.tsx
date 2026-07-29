@@ -6,10 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/products", label: "Products" },
+  { to: "/case-studies", label: "Case Studies" },
+  { to: "/about", label: "About" },
 ];
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
