@@ -20,7 +20,7 @@ export function Footer() {
               <span className="font-display text-lg font-semibold">ThunSpark</span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              ThunSpark helps businesses automate operations and scale efficiently through AI-powered workflows.
+              We help businesses launch, grow, and scale online with marketing that actually brings customers.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <span>© 2026 ThunSpark. All Rights Reserved.</span>
-          <span>Built to save time. Designed to scale.</span>
+          <span>Marketing made simple. Growth made real.</span>
         </div>
       </div>
     </footer>
