@@ -56,7 +56,7 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-page relative pt-8 sm:pt-12 md:pt-20">
+      <section className="container-page relative pt-6 sm:pt-10 md:pt-14">
         <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-[1.1fr_1fr]">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.div variants={fadeUp}>

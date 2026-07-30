@@ -55,10 +55,10 @@ const studies = [
 function CaseStudies() {
   return (
     <>
-      <section className="container-page pt-8 sm:pt-12 md:pt-20">
+      <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>Case Studies</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             Real businesses. <span className="text-gradient">Real growth.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">

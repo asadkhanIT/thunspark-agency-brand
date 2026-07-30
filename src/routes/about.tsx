@@ -30,10 +30,10 @@ const values = [
 function About() {
   return (
     <>
-      <section className="container-page pt-8 sm:pt-12 md:pt-20">
+      <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>About ThunSpark</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             We started ThunSpark for <span className="text-gradient">one simple reason.</span>
           </h1>
         </Reveal>
