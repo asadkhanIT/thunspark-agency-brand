@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Send, Check, AlertCircle } from "lucide-react";
+import { Mail, Send, Check, AlertCircle, Phone, Clock, MapPin } from "lucide-react";
 import { LinkedInIcon, InstagramIcon } from "../components/BrandIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section, SectionLabel, Reveal } from "../components/ui-primitives";
@@ -29,6 +29,13 @@ const serviceOptions = [
   "Lead Generation",
   "Marketing Automation",
   "Not sure yet",
+];
+
+const contactDetails: { Icon: typeof Mail; label: string; value: string; href?: string }[] = [
+  { Icon: Mail, label: "Email", value: "hello@thunspark.com", href: "mailto:hello@thunspark.com" },
+  { Icon: Phone, label: "Phone", value: "+1 (555) 000-0000", href: "tel:+15550000000" },
+  { Icon: Clock, label: "Business Hours", value: "Mon – Fri, 9:00 AM – 6:00 PM" },
+  { Icon: MapPin, label: "Location", value: "Remote-first · Working with clients worldwide" },
 ];
 
 function Contact() {
@@ -73,37 +80,43 @@ function Contact() {
 
   return (
     <>
-      <section className="container-page pt-8 sm:pt-12 md:pt-20">
+      <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>Contact</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
-            Let's talk about <span className="text-gradient">your business.</span>
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
+            Let's Talk About <span className="text-gradient">Your Business.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
-            Whether you need more customers, better branding, stronger marketing, or simply don't know where to start, we'd love to hear from you.
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Tell us where your business is today and what you'd like to grow. We'll come back with honest, practical advice — no pressure, no sales tricks.
           </p>
         </Reveal>
       </section>
 
-      <Section className="!pt-16 sm:!pt-24">
-        <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1fr_1.2fr]">
+      <Section className="!pt-10 sm:!pt-14">
+        <div className="grid gap-8 lg:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           {/* Info */}
           <Reveal>
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
-                  <Mail className="h-5 w-5" />
-                </span>
-                <div>
-                  <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</div>
-                  <a href="mailto:hello@thunspark.com" className="mt-1 block text-base text-foreground hover:text-accent">
-                    hello@thunspark.com
-                  </a>
+            <div className="space-y-5">
+              {contactDetails.map(({ Icon, label, value, href }) => (
+                <div key={label} className="flex items-start gap-4">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div className="min-w-0">
+                    <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</div>
+                    {href ? (
+                      <a href={href} className="mt-1 block break-words text-base text-foreground transition-colors hover:text-accent">
+                        {value}
+                      </a>
+                    ) : (
+                      <div className="mt-1 text-base text-foreground">{value}</div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              ))}
 
-              <div className="border-t border-border pt-8">
-                <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">CONNECT</div>
+              <div className="border-t border-border pt-6">
+                <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Connect</div>
                 <div className="mt-4 flex gap-3">
                   {[
                     { href: "https://linkedin.com", Icon: LinkedInIcon, label: "LinkedIn" },
@@ -124,16 +137,17 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="border-t border-border pt-8">
-                <p className="text-2xl font-medium tracking-tight sm:text-3xl">Let's Grow Together.</p>
+              <div className="border-t border-border pt-6">
+                <p className="text-xl font-medium tracking-tight sm:text-2xl">Let's Grow Together.</p>
               </div>
             </div>
           </Reveal>
 
+
           {/* Form */}
           <Reveal delay={0.1}>
-            <form onSubmit={onSubmit} className="relative rounded-3xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-8 md:p-10">
-              <div className="space-y-6">
+            <form onSubmit={onSubmit} className="relative rounded-3xl border border-border bg-glass p-5 backdrop-blur-xl sm:p-7">
+              <div className="space-y-5">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Field
                     label="Name" id="name" error={errors.name}
@@ -214,14 +228,19 @@ function Contact() {
                   }
                 />
 
-                <button
-                  type="submit"
-                  disabled={state === "submitting"}
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.01] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {state === "submitting" ? "Sending…" : "Book a Free Strategy Call"}
-                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </button>
+                <div>
+                  <button
+                    type="submit"
+                    disabled={state === "submitting"}
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.01] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {state === "submitting" ? "Sending…" : "Send Message"}
+                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                  <p className="mt-3 text-center text-xs text-muted-foreground">
+                    We usually respond within 24 hours.
+                  </p>
+                </div>
 
                 <AnimatePresence>
                   {state === "success" && (

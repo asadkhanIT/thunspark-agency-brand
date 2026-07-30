@@ -55,10 +55,10 @@ const studies = [
 function CaseStudies() {
   return (
     <>
-      <section className="container-page pt-8 sm:pt-12 md:pt-20">
+      <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>Case Studies</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             Real businesses. <span className="text-gradient">Real growth.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
@@ -67,7 +67,7 @@ function CaseStudies() {
         </Reveal>
       </section>
 
-      <Section className="!pt-16 sm:!pt-24">
+      <Section className="!pt-12 sm:!pt-16">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -83,8 +83,8 @@ function CaseStudies() {
                     {s.tag}
                   </span>
                 </div>
-                <h2 className="mt-8 text-2xl font-medium leading-snug sm:text-3xl">{s.title}</h2>
-                <dl className="mt-8 space-y-6">
+                <h2 className="mt-6 text-xl font-medium leading-snug sm:text-2xl">{s.title}</h2>
+                <dl className="mt-6 space-y-5">
                   {[
                     ["The Challenge", s.challenge],
                     ["Our Strategy", s.strategy],
@@ -96,7 +96,7 @@ function CaseStudies() {
                     </div>
                   ))}
                 </dl>
-                <div className="mt-8 rounded-xl border border-accent/25 bg-accent/[0.06] p-5">
+                <div className="mt-6 rounded-xl border border-accent/25 bg-accent/[0.06] p-5">
                   <div className="font-display text-xs uppercase tracking-[0.18em] text-accent">Results</div>
                   <p className="mt-2 text-sm leading-relaxed text-foreground">{s.results}</p>
                 </div>
@@ -106,7 +106,7 @@ function CaseStudies() {
         </motion.div>
 
         <Reveal delay={0.1}>
-          <div className="mt-10 rounded-3xl border border-dashed border-border p-10 text-center">
+          <div className="mt-10 rounded-3xl border border-dashed border-border p-8 text-center">
             <p className="text-base text-muted-foreground">
               More client stories are on the way. Yours could be the next one.
             </p>

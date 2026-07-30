@@ -30,10 +30,10 @@ const values = [
 function About() {
   return (
     <>
-      <section className="container-page pt-8 sm:pt-12 md:pt-20">
+      <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>About ThunSpark</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             We started ThunSpark for <span className="text-gradient">one simple reason.</span>
           </h1>
         </Reveal>
@@ -55,7 +55,7 @@ function About() {
           <Reveal>
             <GlassCard className="h-full">
               <div className="font-display text-xs uppercase tracking-[0.18em] text-accent">Our Mission</div>
-              <p className="mt-6 text-xl font-medium leading-snug sm:text-2xl">
+              <p className="mt-4 text-lg font-medium leading-snug sm:text-xl">
                 To help businesses grow with marketing that feels simple, transparent, and effective.
               </p>
             </GlassCard>
@@ -63,7 +63,7 @@ function About() {
           <Reveal delay={0.1}>
             <GlassCard className="h-full">
               <div className="font-display text-xs uppercase tracking-[0.18em] text-accent">Our Vision</div>
-              <p className="mt-6 text-xl font-medium leading-snug sm:text-2xl">
+              <p className="mt-4 text-lg font-medium leading-snug sm:text-xl">
                 To become the growth partner businesses trust when they're ready to reach the next level.
               </p>
             </GlassCard>
@@ -75,7 +75,7 @@ function About() {
       <Section>
         <Reveal>
           <SectionLabel>Our Values</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             What you can expect from working with us.
           </h2>
         </Reveal>
@@ -84,13 +84,13 @@ function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {values.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>
               <GlassCard className="h-full">
                 <Icon className="h-6 w-6 text-accent" />
-                <h3 className="mt-8 text-lg font-medium">{title}</h3>
+                <h3 className="mt-5 text-lg font-medium">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
               </GlassCard>
             </motion.div>
