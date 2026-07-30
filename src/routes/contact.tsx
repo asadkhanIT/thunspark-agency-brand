@@ -31,6 +31,13 @@ const serviceOptions = [
   "Not sure yet",
 ];
 
+const contactDetails: { Icon: typeof Mail; label: string; value: string; href?: string }[] = [
+  { Icon: Mail, label: "Email", value: "hello@thunspark.com", href: "mailto:hello@thunspark.com" },
+  { Icon: Phone, label: "Phone", value: "+1 (555) 000-0000", href: "tel:+15550000000" },
+  { Icon: Clock, label: "Business Hours", value: "Mon – Fri, 9:00 AM – 6:00 PM" },
+  { Icon: MapPin, label: "Location", value: "Remote-first · Working with clients worldwide" },
+];
+
 function Contact() {
   const [form, setForm] = useState({
     name: "", company: "", email: "", phone: "", website: "", message: "",
