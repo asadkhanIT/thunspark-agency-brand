@@ -42,7 +42,7 @@ export function Navbar() {
           <span className="font-display text-lg font-semibold tracking-tight">ThunSpark</span>
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -59,14 +59,14 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_8px_30px_-8px_rgba(255,237,105,0.5)] md:inline-flex"
+            className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_8px_30px_-8px_rgba(255,237,105,0.5)] lg:inline-flex"
           >
             Book a Free Strategy Call
           </Link>
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-glass md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-glass lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -79,7 +79,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="border-t border-border bg-[#0f1115]/95 backdrop-blur-xl md:hidden"
+            className="border-t border-border bg-[#0f1115]/95 backdrop-blur-xl lg:hidden"
           >
             <div className="container-page flex flex-col gap-1 py-4">
               {links.map((l) => (
