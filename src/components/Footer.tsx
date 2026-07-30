@@ -11,8 +11,8 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border mt-32">
-      <div className="container-page py-16">
+    <footer className="border-t border-border mt-20">
+      <div className="container-page py-12">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2">
