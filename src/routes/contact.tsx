@@ -73,37 +73,43 @@ function Contact() {
 
   return (
     <>
-      <section className="container-page pt-8 sm:pt-12 md:pt-20">
+      <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>Contact</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
-            Let's talk about <span className="text-gradient">your business.</span>
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
+            Let's Talk About <span className="text-gradient">Your Business.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
-            Whether you need more customers, better branding, stronger marketing, or simply don't know where to start, we'd love to hear from you.
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Tell us where your business is today and what you'd like to grow. We'll come back with honest, practical advice — no pressure, no sales tricks.
           </p>
         </Reveal>
       </section>
 
-      <Section className="!pt-12 sm:!pt-16">
-        <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1fr_1.2fr]">
+      <Section className="!pt-10 sm:!pt-14">
+        <div className="grid gap-8 lg:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           {/* Info */}
           <Reveal>
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
-                  <Mail className="h-5 w-5" />
-                </span>
-                <div>
-                  <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</div>
-                  <a href="mailto:hello@thunspark.com" className="mt-1 block text-base text-foreground hover:text-accent">
-                    hello@thunspark.com
-                  </a>
+            <div className="space-y-5">
+              {contactDetails.map(({ Icon, label, value, href }) => (
+                <div key={label} className="flex items-start gap-4">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div className="min-w-0">
+                    <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</div>
+                    {href ? (
+                      <a href={href} className="mt-1 block break-words text-base text-foreground transition-colors hover:text-accent">
+                        {value}
+                      </a>
+                    ) : (
+                      <div className="mt-1 text-base text-foreground">{value}</div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              ))}
 
-              <div className="border-t border-border pt-8">
-                <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">CONNECT</div>
+              <div className="border-t border-border pt-6">
+                <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Connect</div>
                 <div className="mt-4 flex gap-3">
                   {[
                     { href: "https://linkedin.com", Icon: LinkedInIcon, label: "LinkedIn" },
@@ -124,11 +130,12 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="border-t border-border pt-8">
-                <p className="text-2xl font-medium tracking-tight sm:text-3xl">Let's Grow Together.</p>
+              <div className="border-t border-border pt-6">
+                <p className="text-xl font-medium tracking-tight sm:text-2xl">Let's Grow Together.</p>
               </div>
             </div>
           </Reveal>
+
 
           {/* Form */}
           <Reveal delay={0.1}>
