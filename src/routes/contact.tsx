@@ -228,14 +228,19 @@ function Contact() {
                   }
                 />
 
-                <button
-                  type="submit"
-                  disabled={state === "submitting"}
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.01] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {state === "submitting" ? "Sending…" : "Book a Free Strategy Call"}
-                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </button>
+                <div>
+                  <button
+                    type="submit"
+                    disabled={state === "submitting"}
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.01] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {state === "submitting" ? "Sending…" : "Send Message"}
+                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                  <p className="mt-3 text-center text-xs text-muted-foreground">
+                    We usually respond within 24 hours.
+                  </p>
+                </div>
 
                 <AnimatePresence>
                   {state === "success" && (
