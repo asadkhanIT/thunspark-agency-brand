@@ -55,7 +55,7 @@ function About() {
           <Reveal>
             <GlassCard className="h-full">
               <div className="font-display text-xs uppercase tracking-[0.18em] text-accent">Our Mission</div>
-              <p className="mt-6 text-xl font-medium leading-snug sm:text-2xl">
+              <p className="mt-4 text-lg font-medium leading-snug sm:text-xl">
                 To help businesses grow with marketing that feels simple, transparent, and effective.
               </p>
             </GlassCard>
@@ -63,7 +63,7 @@ function About() {
           <Reveal delay={0.1}>
             <GlassCard className="h-full">
               <div className="font-display text-xs uppercase tracking-[0.18em] text-accent">Our Vision</div>
-              <p className="mt-6 text-xl font-medium leading-snug sm:text-2xl">
+              <p className="mt-4 text-lg font-medium leading-snug sm:text-xl">
                 To become the growth partner businesses trust when they're ready to reach the next level.
               </p>
             </GlassCard>
@@ -90,7 +90,7 @@ function About() {
             <motion.div key={title} variants={fadeUp}>
               <GlassCard className="h-full">
                 <Icon className="h-6 w-6 text-accent" />
-                <h3 className="mt-8 text-lg font-medium">{title}</h3>
+                <h3 className="mt-5 text-lg font-medium">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
               </GlassCard>
             </motion.div>

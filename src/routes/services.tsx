@@ -88,7 +88,7 @@ function Services() {
                 </div>
 
                 <div className="grid gap-5">
-                  <div className="rounded-2xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-7">
+                  <div className="rounded-2xl border border-border bg-glass p-5 backdrop-blur-xl sm:p-6">
                     <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">What it does for you</h3>
                     <ul className="mt-5 space-y-3">
                       {s.benefits.map((b) => (
@@ -101,7 +101,7 @@ function Services() {
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-2xl border border-border bg-glass p-6 backdrop-blur-xl sm:p-7">
+                  <div className="rounded-2xl border border-border bg-glass p-5 backdrop-blur-xl sm:p-6">
                     <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">What's included</h3>
                     <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
                       {s.useCases.map((u) => (
