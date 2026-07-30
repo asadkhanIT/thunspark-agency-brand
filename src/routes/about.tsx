@@ -33,7 +33,7 @@ function About() {
       <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>About ThunSpark</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             We started ThunSpark for <span className="text-gradient">one simple reason.</span>
           </h1>
         </Reveal>
@@ -75,7 +75,7 @@ function About() {
       <Section>
         <Reveal>
           <SectionLabel>Our Values</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             What you can expect from working with us.
           </h2>
         </Reveal>
@@ -84,7 +84,7 @@ function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {values.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>

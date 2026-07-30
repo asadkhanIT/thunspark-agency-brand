@@ -58,7 +58,7 @@ function CaseStudies() {
       <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>Case Studies</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             Real businesses. <span className="text-gradient">Real growth.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
@@ -67,7 +67,7 @@ function CaseStudies() {
         </Reveal>
       </section>
 
-      <Section className="!pt-16 sm:!pt-24">
+      <Section className="!pt-12 sm:!pt-16">
         <motion.div
           variants={stagger}
           initial="hidden"

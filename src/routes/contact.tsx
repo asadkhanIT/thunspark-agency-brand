@@ -76,7 +76,7 @@ function Contact() {
       <section className="container-page pt-8 sm:pt-12 md:pt-20">
         <Reveal>
           <SectionLabel>Contact</SectionLabel>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             Let's talk about <span className="text-gradient">your business.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
@@ -85,7 +85,7 @@ function Contact() {
         </Reveal>
       </section>
 
-      <Section className="!pt-16 sm:!pt-24">
+      <Section className="!pt-12 sm:!pt-16">
         <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1fr_1.2fr]">
           {/* Info */}
           <Reveal>
