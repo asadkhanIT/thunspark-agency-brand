@@ -46,7 +46,7 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
 export function GlassCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl border border-border bg-glass p-6 sm:p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.07] ${className}`}
+      className={`group relative overflow-hidden rounded-2xl border border-border bg-glass p-5 sm:p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.07] ${className}`}
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
         <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-accent/20 via-transparent to-transparent" />
