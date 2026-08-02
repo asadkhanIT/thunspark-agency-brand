@@ -64,7 +64,7 @@ function Home() {
             </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-4 text-2xl font-semibold leading-[1.1] tracking-tight sm:mt-5 sm:text-4xl lg:text-5xl"
+              className="mt-4 text-3xl font-semibold leading-[1.1] tracking-tight sm:mt-5 sm:text-4xl lg:text-5xl"
             >
               <span className="text-gradient">You built the business.</span>
               <br />We'll help the right
@@ -142,12 +142,12 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>
               <GlassCard className="h-full">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-5 text-lg font-medium">{title}</h3>
@@ -177,7 +177,7 @@ function Home() {
             <motion.div
               key={ind}
               variants={fadeUp}
-              className="group relative bg-background p-5 sm:p-6 transition-colors hover:bg-glass"
+              className="group relative bg-background p-4 sm:p-5 transition-colors hover:bg-glass"
             >
               <div className="font-display text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</div>
               <div className="mt-2 text-lg font-medium">{ind}</div>
@@ -207,7 +207,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {reasons.map((r, i) => (
             <motion.div key={r} variants={fadeUp}>
@@ -233,7 +233,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           {steps.map((s) => (
             <motion.div key={s.step} variants={fadeUp}>
