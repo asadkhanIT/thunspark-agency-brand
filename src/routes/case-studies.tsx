@@ -58,7 +58,7 @@ function CaseStudies() {
       <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>Case Studies</SectionLabel>
-          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl">
             Real businesses. <span className="text-gradient">Real growth.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
