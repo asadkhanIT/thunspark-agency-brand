@@ -74,13 +74,13 @@ function LineChart() {
 
 export function MarketingVisual() {
   return (
-    <div className="relative w-full max-w-[440px]">
+    <div className="relative w-full max-w-[400px]">
       <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-accent/5 blur-[64px]" />
 
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="relative rounded-2xl border border-border bg-glass p-4 backdrop-blur-xl sm:p-5"
+        className="relative rounded-2xl border border-border bg-glass p-3.5 backdrop-blur-xl sm:p-4"
       >
         {/* header */}
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
