@@ -56,34 +56,34 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-page relative pt-6 sm:pt-10 md:pt-14">
-        <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-[1.1fr_1fr]">
+      <section className="container-page relative flex min-h-[calc(100svh-5.5rem)] items-center py-6 sm:py-8 lg:py-10">
+        <div className="grid w-full items-center gap-8 lg:gap-14 lg:grid-cols-[1.15fr_1fr]">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.div variants={fadeUp}>
               <SectionLabel>Digital Marketing Solutions</SectionLabel>
             </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
+              className="mt-4 text-3xl font-semibold leading-[1.1] tracking-tight sm:mt-5 sm:text-4xl lg:text-5xl"
             >
               <span className="text-gradient">You built the business.</span>
               <br />We'll help the right
               <br />people find it.
             </motion.h1>
-            <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
+            <motion.p variants={fadeUp} className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base">
               Whether you're launching something new or trying to grow faster, we help you get seen online, attract better customers, and turn attention into real business growth.
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3 sm:mt-10">
+            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3 sm:mt-7">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
               >
                 Book a Free Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-glass px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/[0.07]"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-glass px-5 py-3 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/[0.07]"
               >
                 Explore Our Services
               </Link>
@@ -91,15 +91,16 @@ function Home() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex justify-center lg:justify-end lg:-mt-12 xl:-mt-16"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="flex justify-center lg:justify-end"
           >
-            <HeroIllustration />
+            <MarketingVisual />
           </motion.div>
         </div>
       </section>
+
 
       {/* TRUST */}
       <Section>
