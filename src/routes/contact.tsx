@@ -83,7 +83,7 @@ function Contact() {
       <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>Contact</SectionLabel>
-          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl">
+          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-[2.6rem]">
             Let's Talk About <span className="text-gradient">Your Business.</span>
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">

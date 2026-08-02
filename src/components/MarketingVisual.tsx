@@ -32,7 +32,7 @@ function LineChart() {
   const area = `${path} L${w},${h} L0,${h} Z`;
 
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="h-24 w-full" preserveAspectRatio="none">
+    <svg viewBox={`0 0 ${w} ${h}`} className="h-20 w-full" preserveAspectRatio="none">
       <defs>
         <linearGradient id="mv-area" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.22" />
@@ -94,12 +94,12 @@ export function MarketingVisual() {
           </span>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-3">
           <LineChart />
         </div>
 
         {/* KPI tiles */}
-        <div className="mt-4 grid grid-cols-3 gap-2">
+        <div className="mt-3 grid grid-cols-3 gap-2">
           {kpis.map(({ Icon, label, value }, i) => (
             <motion.div
               key={label}
@@ -116,7 +116,7 @@ export function MarketingVisual() {
         </div>
 
         {/* channels */}
-        <div className="mt-4 space-y-2.5">
+        <div className="mt-3 space-y-2">
           {channels.map((c, i) => (
             <div key={c.name}>
               <div className="flex items-center justify-between text-[11px] text-muted-foreground">
