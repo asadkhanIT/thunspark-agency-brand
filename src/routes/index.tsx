@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {
   ArrowRight, ArrowUpRight, Share2, Target, Search, MonitorSmartphone, Users, Settings2,
 } from "lucide-react";
-import { HeroIllustration } from "../components/HeroIllustration";
+import { MarketingVisual } from "../components/MarketingVisual";
 import { Section, SectionLabel, Reveal, GlassCard, fadeUp, stagger } from "../components/ui-primitives";
 
 export const Route = createFileRoute("/")({
@@ -64,7 +64,7 @@ function Home() {
             </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-4 text-3xl font-semibold leading-[1.1] tracking-tight sm:mt-5 sm:text-4xl lg:text-5xl"
+              className="mt-4 text-2xl font-semibold leading-[1.1] tracking-tight sm:mt-5 sm:text-4xl lg:text-5xl"
             >
               <span className="text-gradient">You built the business.</span>
               <br />We'll help the right
@@ -107,7 +107,7 @@ function Home() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <SectionLabel>Keeping it simple</SectionLabel>
-            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
               Marketing shouldn't feel complicated.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -125,7 +125,7 @@ function Home() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
             <SectionLabel>What we do</SectionLabel>
-            <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
               Everything you need to <span className="text-muted-foreground">grow online.</span>
             </h2>
           </Reveal>
@@ -142,7 +142,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>
@@ -162,7 +162,7 @@ function Home() {
       <Section>
         <Reveal>
           <SectionLabel>Industries</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
             We work with businesses that want to grow.
           </h2>
         </Reveal>
@@ -171,7 +171,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
         >
           {industries.map((ind, i) => (
             <motion.div
@@ -197,7 +197,7 @@ function Home() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <SectionLabel>Why ThunSpark</SectionLabel>
-            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
               Why businesses choose us.
             </h2>
           </div>
@@ -207,7 +207,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {reasons.map((r, i) => (
             <motion.div key={r} variants={fadeUp}>
@@ -224,7 +224,7 @@ function Home() {
       <Section>
         <Reveal>
           <SectionLabel>Our Process</SectionLabel>
-          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
             Here's how we work together.
           </h2>
         </Reveal>
@@ -233,7 +233,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
         >
           {steps.map((s) => (
             <motion.div key={s.step} variants={fadeUp}>
@@ -260,7 +260,7 @@ export function CTASection() {
           <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
           <div className="relative grid items-center gap-8 md:grid-cols-[1.5fr_1fr]">
             <div>
-              <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+              <h2 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
                 Ready to grow your business online?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">

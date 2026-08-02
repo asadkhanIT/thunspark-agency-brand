@@ -12,7 +12,7 @@ const socials = [
 export function Footer() {
   return (
     <footer className="border-t border-border mt-20">
-      <div className="container-page py-12">
+      <div className="container-page py-10">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <span>© 2026 ThunSpark. All Rights Reserved.</span>
           <span>Marketing made simple. Growth made real.</span>
         </div>
