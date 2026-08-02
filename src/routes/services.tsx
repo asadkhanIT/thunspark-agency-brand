@@ -64,7 +64,7 @@ function Services() {
       <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>Services</SectionLabel>
-          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl">
+          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-[2.6rem]">
             Marketing that actually <span className="text-gradient">moves your business forward.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
@@ -74,7 +74,7 @@ function Services() {
       </section>
 
       <Section className="!pt-12 sm:!pt-16">
-        <div className="space-y-10 sm:space-y-14">
+        <div className="space-y-8 sm:space-y-10">
           {services.map((s, i) => (
             <Reveal key={s.title}>
               <div className={`grid items-center gap-8 lg:gap-12 lg:grid-cols-2 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
@@ -83,7 +83,7 @@ function Services() {
                   <div className="mt-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-glass text-accent">
                     <s.Icon className="h-6 w-6" />
                   </div>
-                  <h2 className="mt-5 text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">{s.title}</h2>
+                  <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">{s.title}</h2>
                   <p className="mt-5 text-base leading-relaxed text-muted-foreground">{s.description}</p>
                 </div>
 

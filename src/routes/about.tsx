@@ -33,12 +33,12 @@ function About() {
       <section className="container-page pt-6 sm:pt-10 md:pt-14">
         <Reveal>
           <SectionLabel>About ThunSpark</SectionLabel>
-          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl">
+          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-[2.6rem]">
             We started ThunSpark for <span className="text-gradient">one simple reason.</span>
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="mt-8 grid gap-8 border-t border-border pt-10 sm:mt-12 sm:gap-10 sm:pt-12 md:grid-cols-2">
+          <div className="mt-6 grid gap-8 border-t border-border pt-10 sm:mt-12 sm:gap-10 sm:pt-12 md:grid-cols-2">
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
               Too many businesses have amazing products and services that never get the attention they deserve. Not because they're bad. Because the right people never find them.
             </p>
@@ -75,7 +75,7 @@ function About() {
       <Section>
         <Reveal>
           <SectionLabel>Our Values</SectionLabel>
-          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
             What you can expect from working with us.
           </h2>
         </Reveal>
@@ -84,7 +84,7 @@ function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {values.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>

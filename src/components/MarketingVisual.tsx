@@ -32,7 +32,7 @@ function LineChart() {
   const area = `${path} L${w},${h} L0,${h} Z`;
 
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="h-24 w-full" preserveAspectRatio="none">
+    <svg viewBox={`0 0 ${w} ${h}`} className="h-20 w-full" preserveAspectRatio="none">
       <defs>
         <linearGradient id="mv-area" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.22" />
@@ -74,13 +74,13 @@ function LineChart() {
 
 export function MarketingVisual() {
   return (
-    <div className="relative w-full max-w-[440px]">
+    <div className="relative w-full max-w-[400px]">
       <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-accent/5 blur-[64px]" />
 
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="relative rounded-2xl border border-border bg-glass p-4 backdrop-blur-xl sm:p-5"
+        className="relative rounded-2xl border border-border bg-glass p-3.5 backdrop-blur-xl sm:p-4"
       >
         {/* header */}
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
@@ -94,12 +94,12 @@ export function MarketingVisual() {
           </span>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-3">
           <LineChart />
         </div>
 
         {/* KPI tiles */}
-        <div className="mt-4 grid grid-cols-3 gap-2">
+        <div className="mt-3 grid grid-cols-3 gap-2">
           {kpis.map(({ Icon, label, value }, i) => (
             <motion.div
               key={label}
@@ -116,7 +116,7 @@ export function MarketingVisual() {
         </div>
 
         {/* channels */}
-        <div className="mt-4 space-y-2.5">
+        <div className="mt-3 space-y-2">
           {channels.map((c, i) => (
             <div key={c.name}>
               <div className="flex items-center justify-between text-[11px] text-muted-foreground">

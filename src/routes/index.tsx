@@ -56,38 +56,50 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-page relative flex min-h-[calc(100svh-5.5rem)] items-center py-6 sm:py-8 lg:py-10">
-        <div className="grid w-full items-center gap-8 lg:gap-14 lg:grid-cols-[1.15fr_1fr]">
+      <section className="container-page relative flex min-h-[calc(100svh-5rem)] items-center py-4 sm:py-6">
+        <div className="grid w-full items-center gap-6 lg:gap-10 lg:grid-cols-[1.15fr_1fr]">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.div variants={fadeUp}>
               <SectionLabel>Digital Marketing Solutions</SectionLabel>
             </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-4 text-3xl font-semibold leading-[1.1] tracking-tight sm:mt-5 sm:text-4xl lg:text-5xl"
+              className="mt-3 text-[1.75rem] font-semibold leading-[1.08] tracking-tight sm:mt-4 sm:text-4xl lg:text-[2.75rem]"
             >
               <span className="text-gradient">You built the business.</span>
               <br />We'll help the right
               <br />people find it.
             </motion.h1>
-            <motion.p variants={fadeUp} className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base">
+            <motion.p variants={fadeUp} className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:mt-4">
               Whether you're launching something new or trying to grow faster, we help you get seen online, attract better customers, and turn attention into real business growth.
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3 sm:mt-7">
+            <motion.div variants={fadeUp} className="mt-5 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.03] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)]"
               >
                 Book a Free Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-glass px-5 py-3 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/[0.07]"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-glass px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur-xl transition-all hover:border-accent/40 hover:bg-white/[0.07]"
               >
                 Explore Our Services
               </Link>
             </motion.div>
+
+            <motion.ul
+              variants={fadeUp}
+              className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground"
+            >
+              {["No long contracts", "Transparent reporting", "Replies within 24 hours"].map((t) => (
+                <li key={t} className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                  {t}
+                </li>
+              ))}
+            </motion.ul>
           </motion.div>
 
           <motion.div
@@ -107,7 +119,7 @@ function Home() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <SectionLabel>Keeping it simple</SectionLabel>
-            <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
+            <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
               Marketing shouldn't feel complicated.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -125,7 +137,7 @@ function Home() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
             <SectionLabel>What we do</SectionLabel>
-            <h2 className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
+            <h2 className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
               Everything you need to <span className="text-muted-foreground">grow online.</span>
             </h2>
           </Reveal>
@@ -142,7 +154,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>
@@ -162,7 +174,7 @@ function Home() {
       <Section>
         <Reveal>
           <SectionLabel>Industries</SectionLabel>
-          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
             We work with businesses that want to grow.
           </h2>
         </Reveal>
@@ -171,7 +183,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
         >
           {industries.map((ind, i) => (
             <motion.div
@@ -197,7 +209,7 @@ function Home() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <SectionLabel>Why ThunSpark</SectionLabel>
-            <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
+            <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
               Why businesses choose us.
             </h2>
           </div>
@@ -207,7 +219,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {reasons.map((r, i) => (
             <motion.div key={r} variants={fadeUp}>
@@ -224,7 +236,7 @@ function Home() {
       <Section>
         <Reveal>
           <SectionLabel>Our Process</SectionLabel>
-          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
             Here's how we work together.
           </h2>
         </Reveal>
@@ -233,7 +245,7 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           {steps.map((s) => (
             <motion.div key={s.step} variants={fadeUp}>
@@ -260,7 +272,7 @@ export function CTASection() {
           <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
           <div className="relative grid items-center gap-8 md:grid-cols-[1.5fr_1fr]">
             <div>
-              <h2 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
+              <h2 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
                 Ready to grow your business online?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">

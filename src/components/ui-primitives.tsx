@@ -13,7 +13,7 @@ export const stagger: Variants = {
 
 export function Section({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) {
   return (
-    <section id={id} className={`container-page py-10 sm:py-12 md:py-16 ${className}`}>
+    <section id={id} className={`container-page py-8 sm:py-10 md:py-12 ${className}`}>
       {children}
     </section>
   );
@@ -47,7 +47,7 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
 export function GlassCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl border border-border bg-glass p-4 sm:p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.07] ${className}`}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-glass p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.07] ${className}`}
     >
 
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
