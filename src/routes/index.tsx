@@ -56,7 +56,7 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-page relative flex min-h-[calc(100svh-4.5rem)] items-center py-4 sm:py-6">
+      <section className="container-page relative flex min-h-[calc(100svh-5rem)] items-center py-4 sm:py-6">
         <div className="grid w-full items-center gap-6 lg:gap-10 lg:grid-cols-[1.15fr_1fr]">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.div variants={fadeUp}>
