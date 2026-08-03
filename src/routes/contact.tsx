@@ -256,6 +256,13 @@ function Contact() {
             </form>
           </Reveal>
         </div>
+
+        <Reveal delay={0.15}>
+          <div className="mt-5 rounded-2xl border border-border bg-glass p-3.5 sm:mt-6">
+            <p className="text-sm font-medium tracking-tight text-foreground">Let's Grow Together.</p>
+            <p className="mt-1 text-xs text-muted-foreground">No pressure, no sales tricks. Just honest advice.</p>
+          </div>
+        </Reveal>
       </Section>
     </>
   );
