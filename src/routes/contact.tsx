@@ -115,7 +115,7 @@ function Contact() {
                     rel="noreferrer"
                     className="grid h-8 w-8 place-items-center rounded-full border border-border bg-background/40 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
                   >
-                    <Linkedin className="h-3.5 w-3.5" />
+                    <LinkedInIcon className="h-3.5 w-3.5" />
                   </a>
                   <a
                     href="mailto:hello@thunspark.agency"
