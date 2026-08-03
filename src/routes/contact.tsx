@@ -1,16 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Send, Check, AlertCircle, Phone, Clock, MapPin } from "lucide-react";
-import { LinkedInIcon, InstagramIcon } from "../components/BrandIcons";
+import { Mail, Send, Check, AlertCircle, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section, SectionLabel, Reveal } from "../components/ui-primitives";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ThunSpark" },
+      { title: "Contact Us — ThunSpark" },
       { name: "description", content: "Let's talk about your business. Tell us where you're at and we'll come back with honest advice on how to grow online." },
-      { property: "og:title", content: "Contact — ThunSpark" },
+      { property: "og:title", content: "Contact Us — ThunSpark" },
       { property: "og:description", content: "Let's talk about your business." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -29,13 +28,6 @@ const serviceOptions = [
   "Lead Generation",
   "Marketing Automation",
   "Not sure yet",
-];
-
-const contactDetails: { Icon: typeof Mail; label: string; value: string; href?: string }[] = [
-  { Icon: Mail, label: "Email", value: "hello@thunspark.com", href: "mailto:hello@thunspark.com" },
-  { Icon: Phone, label: "Phone", value: "+1 (555) 000-0000", href: "tel:+15550000000" },
-  { Icon: Clock, label: "Business Hours", value: "Mon – Fri, 9:00 AM – 6:00 PM" },
-  { Icon: MapPin, label: "Location", value: "Remote-first · Working with clients worldwide" },
 ];
 
 function Contact() {
@@ -80,77 +72,74 @@ function Contact() {
 
   return (
     <>
-      <section className="container-page pt-6 sm:pt-10 md:pt-14">
+      <section className="container-page pt-5 sm:pt-6 md:pt-7">
         <Reveal>
-          <SectionLabel>Contact</SectionLabel>
-          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-[2.6rem]">
+          <SectionLabel>Contact Us</SectionLabel>
+          <h1 className="mt-3 max-w-3xl text-2xl font-semibold leading-[1.08] tracking-tight sm:text-3xl md:text-4xl">
             Let's Talk About <span className="text-gradient">Your Business.</span>
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Tell us where your business is today and what you'd like to grow. We'll come back with honest, practical advice — no pressure, no sales tricks.
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Tell us where your business is today and what you'd like to grow. We'll come back with honest, practical advice.
           </p>
         </Reveal>
       </section>
 
-      <Section className="!pt-10 sm:!pt-14">
-        <div className="grid gap-8 lg:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <Section className="!pt-5 sm:!pt-6">
+        <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-8">
           {/* Info */}
           <Reveal>
-            <div className="space-y-5">
-              {contactDetails.map(({ Icon, label, value, href }) => (
-                <div key={label} className="flex items-start gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-glass text-accent">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <div className="min-w-0">
-                    <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</div>
-                    {href ? (
-                      <a href={href} className="mt-1 block break-words text-base text-foreground transition-colors hover:text-accent">
-                        {value}
-                      </a>
-                    ) : (
-                      <div className="mt-1 text-base text-foreground">{value}</div>
-                    )}
-                  </div>
-                </div>
-              ))}
-
-              <div className="border-t border-border pt-6">
-                <div className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Connect</div>
-                <div className="mt-4 flex gap-3">
-                  {[
-                    { href: "https://linkedin.com", Icon: LinkedInIcon, label: "LinkedIn" },
-                    { href: "https://instagram.com", Icon: InstagramIcon, label: "Instagram" },
-                    { href: "mailto:hello@thunspark.com", Icon: Mail, label: "Email" },
-                  ].map(({ href, Icon, label }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      aria-label={label}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="grid h-10 w-10 place-items-center rounded-full border border-border bg-glass text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
-                    >
-                      <Icon className="h-4 w-4" />
-                    </a>
-                  ))}
+            <div className="flex h-full flex-col gap-4">
+              <div className="flex items-center gap-3 rounded-2xl border border-border bg-glass p-3.5">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border bg-background/40 text-accent">
+                  <Mail className="h-4 w-4" />
+                </span>
+                <div className="min-w-0">
+                  <div className="font-display text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Email</div>
+                  <a
+                    href="mailto:hello@thunspark.agency"
+                    className="mt-0.5 block break-words text-sm text-foreground transition-colors hover:text-accent"
+                  >
+                    hello@thunspark.agency
+                  </a>
                 </div>
               </div>
 
-              <div className="border-t border-border pt-6">
-                <p className="text-xl font-medium tracking-tight sm:text-2xl">Let's Grow Together.</p>
+              <div className="flex items-center gap-3 rounded-2xl border border-border bg-glass p-3.5">
+                <div className="font-display text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Connect</div>
+                <div className="flex gap-2">
+                  <a
+                    href="https://linkedin.com"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="grid h-8 w-8 place-items-center rounded-full border border-border bg-background/40 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+                  >
+                    <Linkedin className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="mailto:hello@thunspark.agency"
+                    aria-label="Email"
+                    className="grid h-8 w-8 place-items-center rounded-full border border-border bg-background/40 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+                  >
+                    <Mail className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-auto rounded-2xl border border-border bg-glass p-3.5">
+                <p className="text-sm font-medium tracking-tight text-foreground">Let's Grow Together.</p>
+                <p className="mt-1 text-xs text-muted-foreground">No pressure, no sales tricks. Just honest advice.</p>
               </div>
             </div>
           </Reveal>
 
-
           {/* Form */}
           <Reveal delay={0.1}>
-            <form onSubmit={onSubmit} className="relative rounded-3xl border border-border bg-glass p-5 backdrop-blur-xl sm:p-7">
-              <div className="space-y-5">
-                <div className="grid gap-6 sm:grid-cols-2">
+            <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-glass p-4 backdrop-blur-xl sm:p-5">
+              <div className="space-y-3.5">
+                <div className="grid gap-3.5 sm:grid-cols-2">
                   <Field
-                    label="Name" id="name" error={errors.name}
+                    label="Full Name" id="name" error={errors.name}
                     input={
                       <input id="name" type="text" value={form.name} maxLength={100}
                         onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
@@ -166,7 +155,7 @@ function Contact() {
                     }
                   />
                   <Field
-                    label="Email" id="email" error={errors.email}
+                    label="Email Address" id="email" error={errors.email}
                     input={
                       <input id="email" type="email" value={form.email} maxLength={255}
                         onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
@@ -184,7 +173,7 @@ function Contact() {
                 </div>
 
                 <Field
-                  label="Website (optional)" id="website"
+                  label="Website (Optional)" id="website"
                   input={
                     <input id="website" type="text" value={form.website} maxLength={255}
                       onChange={(e) => setForm((f) => ({ ...f, website: e.target.value }))}
@@ -193,10 +182,10 @@ function Contact() {
                 />
 
                 <div>
-                  <span className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  <span className="font-display text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                     Services Interested In
                   </span>
-                  <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="mt-2 flex flex-wrap gap-1.5">
                     {serviceOptions.map((s) => {
                       const active = selected.includes(s);
                       return (
@@ -205,7 +194,7 @@ function Contact() {
                           type="button"
                           onClick={() => toggleService(s)}
                           aria-pressed={active}
-                          className={`rounded-full border px-4 py-2 text-sm transition-all ${
+                          className={`rounded-full border px-3 py-1.5 text-xs transition-all ${
                             active
                               ? "border-accent/50 bg-accent/15 text-foreground"
                               : "border-border bg-background/40 text-muted-foreground hover:border-accent/30 hover:text-foreground"
@@ -221,7 +210,7 @@ function Contact() {
                 <Field
                   label="Message" id="message" error={errors.message}
                   input={
-                    <textarea id="message" rows={5} maxLength={1000} value={form.message}
+                    <textarea id="message" rows={3} maxLength={1000} value={form.message}
                       onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                       placeholder="Tell us where your business is today and what you'd like to grow…"
                       className={`${inputCls} resize-none`} />
@@ -232,13 +221,13 @@ function Contact() {
                   <button
                     type="submit"
                     disabled={state === "submitting"}
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.01] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-all hover:scale-[1.01] hover:shadow-[0_12px_40px_-12px_rgba(255,237,105,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {state === "submitting" ? "Sending…" : "Send Message"}
                     <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
-                  <p className="mt-3 text-center text-xs text-muted-foreground">
-                    We usually respond within 24 hours.
+                  <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
+                    <span className="text-accent">⚡</span> We respond as fast as possible.
                   </p>
                 </div>
 
@@ -248,10 +237,10 @@ function Contact() {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
-                      className="flex items-center gap-2 rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm text-foreground"
+                      className="flex items-center gap-2 rounded-xl border border-accent/30 bg-accent/10 px-4 py-2.5 text-sm text-foreground"
                     >
                       <Check className="h-4 w-4 text-accent" />
-                      Got it. We'll get back to you within 24 hours.
+                      Got it. We'll get back to you as fast as possible.
                     </motion.div>
                   )}
                   {state === "error" && (
@@ -259,7 +248,7 @@ function Contact() {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
-                      className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm"
+                      className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-2.5 text-sm"
                     >
                       <AlertCircle className="h-4 w-4 text-red-400" />
                       Something went wrong. Please try again.
@@ -276,16 +265,16 @@ function Contact() {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-background/40 px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all focus:border-accent/50 focus:bg-background/60 focus:ring-2 focus:ring-accent/20";
+  "w-full rounded-xl border border-border bg-background/40 px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all focus:border-accent/50 focus:bg-background/60 focus:ring-2 focus:ring-accent/20";
 
 function Field({ label, id, input, error }: { label: string; id: string; input: React.ReactNode; error?: string }) {
   return (
     <div>
-      <label htmlFor={id} className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">
+      <label htmlFor={id} className="font-display text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
         {label}
       </label>
-      <div className="mt-2.5">{input}</div>
-      {error && <p className="mt-2 text-xs text-red-400">{error}</p>}
+      <div className="mt-1.5">{input}</div>
+      {error && <p className="mt-1 text-xs text-red-400">{error}</p>}
     </div>
   );
 }
