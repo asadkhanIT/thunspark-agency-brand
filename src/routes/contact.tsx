@@ -127,10 +127,6 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="mt-auto rounded-2xl border border-border bg-glass p-3.5">
-                <p className="text-sm font-medium tracking-tight text-foreground">Let's Grow Together.</p>
-                <p className="mt-1 text-xs text-muted-foreground">No pressure, no sales tricks. Just honest advice.</p>
-              </div>
             </div>
           </Reveal>
 
