@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, ArrowUpRight, Share2, Target, Search, MonitorSmartphone, Users, Settings2,
+  ArrowRight, ArrowUpRight, Bot, Code2, Palette, TrendingUp,
 } from "lucide-react";
+
 import { MarketingVisual } from "../components/MarketingVisual";
 import { Section, SectionLabel, Reveal, GlassCard, fadeUp, stagger } from "../components/ui-primitives";
 
