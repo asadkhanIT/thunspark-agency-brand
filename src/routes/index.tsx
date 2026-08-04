@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, ArrowUpRight, Share2, Target, Search, MonitorSmartphone, Users, Settings2,
+  ArrowRight, ArrowUpRight, Bot, Code2, Palette, TrendingUp,
 } from "lucide-react";
+
 import { MarketingVisual } from "../components/MarketingVisual";
 import { Section, SectionLabel, Reveal, GlassCard, fadeUp, stagger } from "../components/ui-primitives";
 
@@ -21,13 +22,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { Icon: Share2, title: "Social Media Marketing", desc: "Show up where your customers already spend their time — with content people actually stop for." },
-  { Icon: Target, title: "Performance Marketing", desc: "Ads that bring you buyers, not just clicks. Every rupee and dollar is tracked." },
-  { Icon: Search, title: "Search Engine Optimization", desc: "Get found when someone searches for exactly what you sell." },
-  { Icon: MonitorSmartphone, title: "Website Design", desc: "A fast, clean website that works like your best salesperson — day and night." },
-  { Icon: Users, title: "Lead Generation", desc: "Stop waiting for customers to find you. We'll go find them for you." },
-  { Icon: Settings2, title: "Marketing Automation", desc: "Follow-ups, reminders and nurture flows that run without you touching them." },
+  { Icon: Bot, title: "AI Automation", desc: "Automate repetitive tasks, improve efficiency, and scale with AI-powered workflows." },
+  { Icon: Code2, title: "Web & App Development", desc: "Fast, modern, scalable websites and apps built to grow your business." },
+  { Icon: Palette, title: "Branding & Content Creation", desc: "A memorable brand with professional design and high-quality content." },
+  { Icon: TrendingUp, title: "Digital Marketing", desc: "More traffic, leads and customers with data-driven marketing." },
 ];
+
 
 const reasons = [
   "We keep things simple.",
@@ -154,7 +154,8 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+
         >
           {services.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>

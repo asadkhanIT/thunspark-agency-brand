@@ -1,17 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Share2, Target, Search, MonitorSmartphone, Users, Settings2, Check,
-} from "lucide-react";
-import { Section, SectionLabel, Reveal } from "../components/ui-primitives";
+import { motion } from "framer-motion";
+import { Bot, Code2, Palette, TrendingUp } from "lucide-react";
+import { Section, SectionLabel, Reveal, fadeUp, stagger } from "../components/ui-primitives";
 import { CTASection } from "./index";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — ThunSpark Digital Marketing" },
-      { name: "description", content: "Social media, paid ads, SEO, website design, lead generation and marketing automation — built around your goals, not a generic package." },
-      { property: "og:title", content: "Services — ThunSpark Digital Marketing" },
-      { property: "og:description", content: "Marketing that actually moves your business forward." },
+      { title: "Services — AI Automation, Web, Branding & Marketing" },
+      { name: "description", content: "ThunSpark builds AI automation, websites and apps, branding and content, and digital marketing — everything your business needs to grow, under one roof." },
+      { property: "og:title", content: "Services — ThunSpark Digital Growth Agency" },
+      { property: "og:description", content: "AI automation, web & app development, branding & content, and digital marketing under one premium agency." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -19,42 +18,77 @@ export const Route = createFileRoute("/services")({
   component: Services,
 });
 
-const services = [
+const categories = [
   {
-    Icon: Share2, title: "Social Media Marketing",
-    description: "We help people discover your business before they discover your competitors.",
-    benefits: ["Content people actually stop for", "A page that looks like a real brand", "Steady growth, not one-off spikes"],
-    useCases: ["Instagram", "Facebook", "LinkedIn", "X", "Content Creation", "Community Management", "Brand Growth"],
+    Icon: Bot,
+    title: "AI Automation",
+    description: "Automate repetitive tasks, improve efficiency, and scale your business with AI-powered workflows.",
+    items: [
+      "Lead Response Automation",
+      "Sales Pipeline Automation",
+      "CRM Automation",
+      "Recruitment Automation",
+      "Customer Support AI",
+      "AI Chatbots",
+      "Email & Follow-up Automation",
+      "Business Process Automation",
+      "Custom AI & n8n Workflows",
+    ],
   },
   {
-    Icon: Target, title: "Performance Marketing",
-    description: "Run smarter ads that bring better customers — not just cheap clicks.",
-    benefits: ["Every campaign tied to a business goal", "Clear reporting you can read in a minute", "Budget spent where it converts"],
-    useCases: ["Google Ads", "Meta Ads", "LinkedIn Ads", "Remarketing", "Landing Pages", "Conversion Optimization"],
+    Icon: Code2,
+    title: "Web & App Development",
+    description: "Build fast, modern, and scalable digital products that help your business grow.",
+    items: [
+      "Business Websites",
+      "Landing Pages",
+      "E-commerce Stores",
+      "Custom Web Applications",
+      "Mobile App Development (Android & iOS)",
+      "Customer Portals",
+      "Internal Dashboards",
+      "API Integrations",
+      "Website Maintenance",
+    ],
   },
   {
-    Icon: Search, title: "Search Engine Optimization",
-    description: "Show up when customers are already looking for businesses like yours.",
-    benefits: ["Traffic that keeps coming without ad spend", "Found by people ready to buy", "Stronger trust from day one"],
-    useCases: ["Keyword Research", "Technical SEO", "Local SEO", "Content SEO"],
+    Icon: Palette,
+    title: "Branding & Content Creation",
+    description: "Build a memorable brand with professional design and high-quality content.",
+    items: [
+      "Brand Identity",
+      "Logo Design",
+      "Brand Guidelines",
+      "Graphic Design",
+      "Social Media Graphics",
+      "LinkedIn Content Creation",
+      "Instagram Content Creation",
+      "Carousel Designs",
+      "Marketing Creatives",
+      "Ad Creatives",
+      "Presentation Design",
+      "Product Mockups",
+      "Video Editing",
+      "Motion Graphics",
+      "Short-form Video Content (Reels & Shorts)",
+    ],
   },
   {
-    Icon: MonitorSmartphone, title: "Website Design",
-    description: "Your website should work as your best salesperson.",
-    benefits: ["Fast and mobile friendly", "Built to convert, not just look pretty", "Easy for you to update"],
-    useCases: ["Landing Pages", "Business Websites", "Conversion Focused Design", "Modern, Clean Layouts"],
-  },
-  {
-    Icon: Users, title: "Lead Generation",
-    description: "Stop waiting for customers to find you. We'll help you find them.",
-    benefits: ["A predictable flow of conversations", "Better fit prospects", "Less time chasing dead ends"],
-    useCases: ["LinkedIn Outreach", "Cold Email", "Appointment Setting", "Sales Funnels"],
-  },
-  {
-    Icon: Settings2, title: "Marketing Automation",
-    description: "Work less. Grow more.",
-    benefits: ["Nothing falls through the cracks", "Faster follow-up means more sales", "Your team focuses on real conversations"],
-    useCases: ["Automated follow-ups", "Lead nurturing", "CRM workflows", "Email automation", "AI-powered marketing systems"],
+    Icon: TrendingUp,
+    title: "Digital Marketing",
+    description: "Generate more traffic, leads, and customers with data-driven marketing.",
+    items: [
+      "Social Media Marketing",
+      "Search Engine Optimization (SEO)",
+      "Performance Marketing",
+      "Google Ads",
+      "Meta Ads",
+      "LinkedIn Marketing",
+      "Lead Generation",
+      "Email Marketing",
+      "Marketing Strategy",
+      "Conversion Rate Optimization (CRO)",
+    ],
   },
 ];
 
@@ -65,58 +99,57 @@ function Services() {
         <Reveal>
           <SectionLabel>Services</SectionLabel>
           <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-[2.6rem]">
-            Marketing that actually <span className="text-gradient">moves your business forward.</span>
+            Everything your business needs to grow — <span className="text-gradient">under one roof.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg">
-            Every business is different. That's why we don't force the same marketing package on everyone. We build strategies based on where you are today and where you want to go.
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
+            AI automation, web and app development, branding and content, and digital marketing. Pick one, or let us build the whole growth engine for you.
           </p>
         </Reveal>
       </section>
 
-      <Section className="!pt-12 sm:!pt-16">
-        <div className="space-y-8 sm:space-y-10">
-          {services.map((s, i) => (
-            <Reveal key={s.title}>
-              <div className={`grid items-center gap-8 lg:gap-12 lg:grid-cols-2 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                <div>
-                  <div className="font-display text-sm text-accent">0{i + 1} — Service</div>
-                  <div className="mt-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-glass text-accent">
-                    <s.Icon className="h-6 w-6" />
-                  </div>
-                  <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">{s.title}</h2>
-                  <p className="mt-5 text-base leading-relaxed text-muted-foreground">{s.description}</p>
+      <Section className="!pt-8 sm:!pt-10">
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid gap-4 sm:gap-5 lg:grid-cols-2"
+        >
+          {categories.map(({ Icon, title, description, items }, i) => (
+            <motion.div key={title} variants={fadeUp}>
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-glass p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.07] sm:p-6">
+                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-accent/15 via-transparent to-transparent" />
                 </div>
 
-                <div className="grid gap-5">
-                  <div className="rounded-2xl border border-border bg-glass p-5 backdrop-blur-xl sm:p-6">
-                    <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">What it does for you</h3>
-                    <ul className="mt-5 space-y-3">
-                      {s.benefits.map((b) => (
-                        <li key={b} className="flex items-start gap-3 text-sm">
-                          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent/15 text-accent">
-                            <Check className="h-3 w-3" strokeWidth={3} />
-                          </span>
-                          <span className="text-foreground">{b}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <div className="relative flex flex-col">
+                  <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="font-display text-[0.7rem] uppercase tracking-[0.18em] text-accent">0{i + 1}</div>
+                      <h2 className="truncate text-lg font-semibold tracking-tight sm:text-xl">{title}</h2>
+                    </div>
                   </div>
-                  <div className="rounded-2xl border border-border bg-glass p-5 backdrop-blur-xl sm:p-6">
-                    <h3 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">What's included</h3>
-                    <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-                      {s.useCases.map((u) => (
-                        <li key={u} className="flex items-start gap-3">
-                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                          {u}
-                        </li>
-                      ))}
-                    </ul>
+
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-border bg-white/[0.03] px-3 py-1.5 text-[0.78rem] leading-none text-muted-foreground transition-colors group-hover:border-accent/20 hover:text-foreground"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Section>
 
       <CTASection />
