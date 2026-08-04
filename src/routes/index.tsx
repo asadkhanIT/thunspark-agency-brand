@@ -154,7 +154,8 @@ function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+
         >
           {services.map(({ Icon, title, desc }) => (
             <motion.div key={title} variants={fadeUp}>
