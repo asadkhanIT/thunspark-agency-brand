@@ -21,27 +21,16 @@ export const Route = createFileRoute("/contact")({
 
 type State = "idle" | "submitting" | "success" | "error";
 
-const serviceOptions = [
-  "Social Media Marketing",
-  "Performance Marketing",
-  "Search Engine Optimization",
-  "Website Design",
-  "Lead Generation",
-  "Marketing Automation",
-  "Not sure yet",
-];
-
 function Contact() {
   const [form, setForm] = useState({
-    name: "", company: "", email: "", phone: "", website: "", message: "",
+    name: "",
+    company: "",
+    email: "",
+    website: "",
+    message: "",
   });
-  const [selected, setSelected] = useState<string[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [state, setState] = useState<State>("idle");
-
-  function toggleService(s: string) {
-    setSelected((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
-  }
 
   function validate() {
     const e: Record<string, string> = {};
@@ -50,7 +39,6 @@ function Contact() {
     if (!form.company.trim()) e.company = "Please enter your company name.";
     if (!form.email.trim()) e.email = "Email is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email.";
-    if (!form.phone.trim()) e.phone = "Please add a phone number so we can reach you.";
     if (!form.message.trim()) e.message = "Tell us a bit about your business.";
     else if (form.message.length > 1000) e.message = "Message must be under 1000 characters.";
     setErrors(e);
@@ -64,8 +52,7 @@ function Contact() {
     try {
       await new Promise((r) => setTimeout(r, 900));
       setState("success");
-      setForm({ name: "", company: "", email: "", phone: "", website: "", message: "" });
-      setSelected([]);
+      setForm({ name: "", company: "", email: "", website: "", message: "" });
     } catch {
       setState("error");
     }
@@ -76,7 +63,7 @@ function Contact() {
       <section className="container-page pt-5 sm:pt-6 md:pt-7">
         <Reveal>
           <SectionLabel>Contact Us</SectionLabel>
-          <h1 className="mt-3 max-w-3xl text-2xl font-semibold leading-[1.08] tracking-tight sm:text-3xl md:text-4xl">
+          <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-[1.08] tracking-tight sm:text-3xl md:text-4xl">
             Let's Talk About <span className="text-gradient">Your Business.</span>
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -85,12 +72,12 @@ function Contact() {
         </Reveal>
       </section>
 
-      <Section className="!pt-5 sm:!pt-6">
-        <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-8">
+      <Section className="!pt-4 sm:!pt-5">
+        <div className="grid items-start gap-5 lg:grid-cols-[0.7fr_1.3fr] lg:gap-8">
           {/* Info */}
           <Reveal>
-            <div className="flex h-full flex-col gap-4">
-              <div className="flex items-center gap-3 rounded-2xl border border-border bg-glass p-3.5">
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3 rounded-2xl border border-border bg-glass p-3">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border bg-background/40 text-accent">
                   <Mail className="h-4 w-4" />
                 </span>
@@ -105,7 +92,7 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 rounded-2xl border border-border bg-glass p-3.5">
+              <div className="flex items-center justify-between rounded-2xl border border-border bg-glass p-3">
                 <div className="font-display text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Connect</div>
                 <div className="flex gap-2">
                   <a
@@ -126,91 +113,93 @@ function Contact() {
                   </a>
                 </div>
               </div>
-
             </div>
           </Reveal>
 
           {/* Form */}
           <Reveal delay={0.1}>
             <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-glass p-4 backdrop-blur-xl sm:p-5">
-              <div className="space-y-3.5">
-                <div className="grid gap-3.5 sm:grid-cols-2">
+              <div className="space-y-3">
+                <div className="grid gap-3 sm:grid-cols-2">
                   <Field
-                    label="Full Name" id="name" error={errors.name}
+                    label="Full Name"
+                    id="name"
+                    error={errors.name}
                     input={
-                      <input id="name" type="text" value={form.name} maxLength={100}
+                      <input
+                        id="name"
+                        type="text"
+                        value={form.name}
+                        maxLength={100}
                         onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                        placeholder="Your full name" className={inputCls} />
+                        placeholder="Your full name"
+                        className={inputCls}
+                      />
                     }
                   />
                   <Field
-                    label="Company Name" id="company" error={errors.company}
+                    label="Company Name"
+                    id="company"
+                    error={errors.company}
                     input={
-                      <input id="company" type="text" value={form.company} maxLength={120}
+                      <input
+                        id="company"
+                        type="text"
+                        value={form.company}
+                        maxLength={120}
                         onChange={(e) => setForm((f) => ({ ...f, company: e.target.value }))}
-                        placeholder="Your business" className={inputCls} />
+                        placeholder="Your business"
+                        className={inputCls}
+                      />
                     }
                   />
                   <Field
-                    label="Email Address" id="email" error={errors.email}
+                    label="Email Address"
+                    id="email"
+                    error={errors.email}
                     input={
-                      <input id="email" type="email" value={form.email} maxLength={255}
+                      <input
+                        id="email"
+                        type="email"
+                        value={form.email}
+                        maxLength={255}
                         onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                        placeholder="you@company.com" className={inputCls} />
+                        placeholder="you@company.com"
+                        className={inputCls}
+                      />
                     }
                   />
                   <Field
-                    label="Phone Number" id="phone" error={errors.phone}
+                    label="Website (Optional)"
+                    id="website"
                     input={
-                      <input id="phone" type="tel" value={form.phone} maxLength={30}
-                        onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                        placeholder="+1 555 000 0000" className={inputCls} />
+                      <input
+                        id="website"
+                        type="text"
+                        value={form.website}
+                        maxLength={255}
+                        onChange={(e) => setForm((f) => ({ ...f, website: e.target.value }))}
+                        placeholder="yourbusiness.com"
+                        className={inputCls}
+                      />
                     }
                   />
                 </div>
 
                 <Field
-                  label="Website (Optional)" id="website"
+                  label="Message"
+                  id="message"
+                  error={errors.message}
                   input={
-                    <input id="website" type="text" value={form.website} maxLength={255}
-                      onChange={(e) => setForm((f) => ({ ...f, website: e.target.value }))}
-                      placeholder="yourbusiness.com" className={inputCls} />
-                  }
-                />
-
-                <div>
-                  <span className="font-display text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                    Services Interested In
-                  </span>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {serviceOptions.map((s) => {
-                      const active = selected.includes(s);
-                      return (
-                        <button
-                          key={s}
-                          type="button"
-                          onClick={() => toggleService(s)}
-                          aria-pressed={active}
-                          className={`rounded-full border px-3 py-1.5 text-xs transition-all ${
-                            active
-                              ? "border-accent/50 bg-accent/15 text-foreground"
-                              : "border-border bg-background/40 text-muted-foreground hover:border-accent/30 hover:text-foreground"
-                          }`}
-                        >
-                          {s}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <Field
-                  label="Message" id="message" error={errors.message}
-                  input={
-                    <textarea id="message" rows={3} maxLength={1000} value={form.message}
+                    <textarea
+                      id="message"
+                      rows={3}
+                      maxLength={1000}
+                      value={form.message}
                       onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                       placeholder="Tell us where your business is today and what you'd like to grow…"
-                      className={`${inputCls} resize-none`} />
+                      className={`${inputCls} resize-none`}
+                    />
                   }
                 />
 
@@ -256,20 +245,13 @@ function Contact() {
             </form>
           </Reveal>
         </div>
-
-        <Reveal delay={0.15}>
-          <div className="mt-5 rounded-2xl border border-border bg-glass p-3.5 sm:mt-6">
-            <p className="text-sm font-medium tracking-tight text-foreground">Let's Grow Together.</p>
-            <p className="mt-1 text-xs text-muted-foreground">No pressure, no sales tricks. Just honest advice.</p>
-          </div>
-        </Reveal>
       </Section>
     </>
   );
 }
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-background/40 px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all focus:border-accent/50 focus:bg-background/60 focus:ring-2 focus:ring-accent/20";
+  "w-full rounded-xl border border-border bg-background/40 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all focus:border-accent/50 focus:bg-background/60 focus:ring-2 focus:ring-accent/20";
 
 function Field({ label, id, input, error }: { label: string; id: string; input: React.ReactNode; error?: string }) {
   return (
@@ -277,7 +259,7 @@ function Field({ label, id, input, error }: { label: string; id: string; input: 
       <label htmlFor={id} className="font-display text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
         {label}
       </label>
-      <div className="mt-1.5">{input}</div>
+      <div className="mt-1">{input}</div>
       {error && <p className="mt-1 text-xs text-red-400">{error}</p>}
     </div>
   );
