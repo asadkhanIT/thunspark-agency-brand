@@ -7,7 +7,7 @@ function origin(request: Request): string {
   return `${proto}://${host}`;
 }
 
-export const Route = createFileRoute("/robots[.]txt")({
+export const Route = createFileRoute("/robots.txt")({
   server: {
     handlers: {
       GET: async ({ request }) => {
