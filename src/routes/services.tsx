@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Bot, Code2, Palette, TrendingUp } from "lucide-react";
+import { Bot, Code2, Palette, Search, TrendingUp } from "lucide-react";
 import { Section, SectionLabel, Reveal, fadeUp, stagger } from "../components/ui-primitives";
 import { CTASection } from "./index";
 
