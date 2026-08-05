@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Bot, Code2, Palette, TrendingUp } from "lucide-react";
+import { Bot, Code2, Palette, Search, TrendingUp } from "lucide-react";
 import { Section, SectionLabel, Reveal, fadeUp, stagger } from "../components/ui-primitives";
 import { CTASection } from "./index";
 
@@ -88,6 +88,28 @@ const categories = [
       "Email Marketing",
       "Marketing Strategy",
       "Conversion Rate Optimization (CRO)",
+    ],
+  },
+  {
+    Icon: Search,
+    title: "Search Engine Optimization (SEO)",
+    description: "Rank higher, get found faster, and turn organic search into a consistent source of qualified traffic.",
+    items: [
+      "SEO Strategy",
+      "SEO Audit",
+      "Technical SEO",
+      "On-Page SEO",
+      "Off-Page SEO",
+      "Local SEO",
+      "E-commerce SEO",
+      "Keyword Research",
+      "Competitor SEO Analysis",
+      "Link Building",
+      "Google Business Profile Optimization",
+      "SEO Content Optimization",
+      "Site Speed Optimization",
+      "Schema Markup",
+      "SEO Reporting",
     ],
   },
 ];
