@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Clock, Calendar, Linkedin, Twitter, Link2, List } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Calendar, Share2, Briefcase, Link2, List } from "lucide-react";
 import { getPostBySlug } from "@/lib/blog.functions";
 import type { PostDetail, PostSummary } from "@/lib/blog-types";
 import { formatDate, withHeadingIds } from "@/lib/slug";
@@ -152,10 +152,10 @@ function ArticlePage() {
             </span>
             <span className="ml-auto flex items-center gap-2">
               <ShareButton label="Share on X" onClick={() => share("x")}>
-                <Twitter className="h-3.5 w-3.5" />
+                <Share2 className="h-3.5 w-3.5" />
               </ShareButton>
               <ShareButton label="Share on LinkedIn" onClick={() => share("linkedin")}>
-                <Linkedin className="h-3.5 w-3.5" />
+                <Briefcase className="h-3.5 w-3.5" />
               </ShareButton>
               <ShareButton
                 label="Copy link"
