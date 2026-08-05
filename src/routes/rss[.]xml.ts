@@ -11,7 +11,7 @@ function cdata(value: string): string {
   return `<![CDATA[${value.replace(/\]\]>/g, "]]&gt;")}]]>`;
 }
 
-export const Route = createFileRoute("/rss[.]xml")({
+export const Route = createFileRoute("/rss.xml")({
   server: {
     handlers: {
       GET: async ({ request }) => {
