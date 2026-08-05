@@ -3,6 +3,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { Search, Sparkles } from "lucide-react";
 import { listPublishedPosts } from "@/lib/blog.functions";
+import type { PostSummary, PostCategory, PostTag } from "@/lib/blog-types";
 import { PostCard } from "@/components/blog/PostCard";
 import { Reveal, Section, SectionLabel } from "@/components/ui-primitives";
 import { NewsletterForm } from "@/components/blog/NewsletterForm";
@@ -47,7 +48,11 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
-  const { posts, categories, tags } = Route.useLoaderData();
+  const { posts, categories, tags } = Route.useLoaderData() as {
+    posts: PostSummary[];
+    categories: PostCategory[];
+    tags: PostTag[];
+  };
   const search = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
   const [term, setTerm] = useState(search.q ?? "");
@@ -56,7 +61,7 @@ function BlogIndex() {
   const rest = posts.filter((p) => !featured.some((f) => f.id === p.id));
 
   const setFilter = (patch: Record<string, string | undefined>) =>
-    navigate({ search: (prev) => ({ ...prev, ...patch }) as never });
+    navigate({ search: (prev: Record<string, unknown>) => ({ ...prev, ...patch }) as never });
 
   return (
     <>
