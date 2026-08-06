@@ -23,7 +23,7 @@ import {
   Minus,
   Link2,
   ImagePlus,
-  Youtube as YoutubeIcon,
+  Video as YoutubeIcon,
   Table as TableIcon,
   Undo2,
   Redo2,
