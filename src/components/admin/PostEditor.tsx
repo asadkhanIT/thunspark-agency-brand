@@ -154,7 +154,7 @@ export function PostEditor({
     }
   }
 
-  async function changeStatus(status: PostStatus, publishedAt?: string | null, key = status) {
+  async function changeStatus(status: PostStatus, publishedAt?: string | null, key: string = status) {
     if (!post.id) {
       const saved = await persist(status, publishedAt, key);
       if (saved) toast.success(`Post ${status === "published" ? "published" : `saved as ${status}`}.`);
