@@ -212,13 +212,13 @@ export const updatePostStatus = createServerFn({ method: "POST" })
   )
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase);
-    const patch: Record<string, unknown> = { status: data.status };
-    if (data.status === "published") patch['published_at'] = data.published_at ?? new Date().toISOString();
+    const patch: { status: typeof data.status; published_at?: string | null } = { status: data.status };
+    if (data.status === "published") patch.published_at = data.published_at ?? new Date().toISOString();
     if (data.status === "scheduled") {
       if (!data.published_at) throw new Error("A future publish date is required to schedule a post.");
-      patch['published_at'] = data.published_at;
+      patch.published_at = data.published_at;
     }
-    if (data.status === "draft") patch['published_at'] = null;
+    if (data.status === "draft") patch.published_at = null;
     const { error } = await context.supabase.from("posts").update(patch).eq("id", data.id);
     if (error) throw new Error(error.message);
     return { ok: true, status: data.status };
