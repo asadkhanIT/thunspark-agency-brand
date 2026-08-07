@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
@@ -11,11 +11,13 @@ import {
   Copy,
   ExternalLink,
   Loader2,
+  Upload,
 } from "lucide-react";
 
 import { RichTextEditor } from "./RichTextEditor";
 import { savePost, updatePostStatus, duplicatePost } from "@/lib/admin.functions";
 import { slugify } from "@/lib/slug";
+import { uploadMedia } from "@/lib/upload-media";
 import type { PostStatus } from "@/lib/blog-types";
 
 type Category = { id: string; name: string; slug: string };
@@ -97,6 +99,22 @@ export function PostEditor({
   const [tagText, setTagText] = useState(initial.tags.join(", "));
   const [schedule, setSchedule] = useState(toLocalInput(initial.published_at));
   const [busy, setBusy] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const coverInput = useRef<HTMLInputElement>(null);
+
+  async function onPickCover(file: File | undefined) {
+    if (!file) return;
+    setUploading(true);
+    try {
+      const url = await uploadMedia(file);
+      setPost((p) => ({ ...p, featured_image: url }));
+      toast.success("Featured image uploaded.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Upload failed.");
+    } finally {
+      setUploading(false);
+    }
+  }
 
   const set = <K extends keyof EditorPost>(key: K, value: EditorPost[K]) =>
     setPost((p) => ({ ...p, [key]: value }));
@@ -440,8 +458,39 @@ export function PostEditor({
               <input value={tagText} onChange={(e) => setTagText(e.target.value)} className={inputClass} />
             </div>
             <div>
-              <label className={labelClass}>Featured image URL</label>
-              <input value={post.featured_image} onChange={(e) => set("featured_image", e.target.value)} className={inputClass} />
+              <label className={labelClass}>Featured image</label>
+              <input
+                value={post.featured_image}
+                onChange={(e) => set("featured_image", e.target.value)}
+                placeholder="Paste a URL or upload below"
+                className={inputClass}
+              />
+              <button
+                type="button"
+                disabled={uploading}
+                onClick={() => coverInput.current?.click()}
+                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground disabled:opacity-60"
+              >
+                {uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+                {uploading ? "Uploading…" : "Upload from computer"}
+              </button>
+              <input
+                ref={coverInput}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => {
+                  void onPickCover(e.target.files?.[0]);
+                  e.target.value = "";
+                }}
+              />
+              {post.featured_image ? (
+                <img
+                  src={post.featured_image}
+                  alt={post.featured_image_alt || "Featured image preview"}
+                  className="mt-2 h-28 w-full rounded-xl border border-border object-cover"
+                />
+              ) : null}
             </div>
             <div>
               <label className={labelClass}>Featured image alt text</label>
