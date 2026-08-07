@@ -28,7 +28,11 @@ import {
   Undo2,
   Redo2,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
+import { Loader2, Upload } from "lucide-react";
+
+import { uploadMedia } from "@/lib/upload-media";
 
 type Props = { value: string; onChange: (html: string) => void };
 
@@ -59,6 +63,8 @@ function ToolButton({
 }
 
 export function RichTextEditor({ value, onChange }: Props) {
+  const fileInput = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
   const editor = useEditor({
     immediatelyRender: false,
     extensions: [
@@ -92,6 +98,20 @@ export function RichTextEditor({ value, onChange }: Props) {
   }
 
   const promptFor = (label: string) => window.prompt(label)?.trim();
+
+  async function onPickFile(file: File | undefined) {
+    if (!file) return;
+    setUploading(true);
+    try {
+      const url = await uploadMedia(file);
+      editor?.chain().focus().setImage({ src: url, alt: file.name }).run();
+      toast.success("Image uploaded.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Upload failed.");
+    } finally {
+      setUploading(false);
+    }
+  }
 
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-glass backdrop-blur-xl">
@@ -151,6 +171,19 @@ export function RichTextEditor({ value, onChange }: Props) {
         >
           <ImagePlus className="h-4 w-4" />
         </ToolButton>
+        <ToolButton label="Upload image from computer" onClick={() => fileInput.current?.click()}>
+          {uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+        </ToolButton>
+        <input
+          ref={fileInput}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={(e) => {
+            void onPickFile(e.target.files?.[0]);
+            e.target.value = "";
+          }}
+        />
         <ToolButton
           label="YouTube video"
           onClick={() => {
