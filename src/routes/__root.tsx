@@ -12,9 +12,11 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { initAnalytics, trackPageView } from "../lib/analytics";
+import { trackPageView } from "../lib/analytics";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { CookieConsent } from "../components/CookieConsent";
+
 
 
 function NotFoundComponent() {
