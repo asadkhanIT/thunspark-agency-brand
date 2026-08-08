@@ -12,9 +12,11 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { initAnalytics, trackPageView } from "../lib/analytics";
+import { trackPageView } from "../lib/analytics";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { CookieConsent } from "../components/CookieConsent";
+
 
 
 function NotFoundComponent() {
@@ -99,17 +101,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const routerState = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
-    initAnalytics();
-  }, []);
-
-  useEffect(() => {
-    trackPageView(routerState);
-  }, [routerState]);
+    // No-ops until the user accepts cookies in the consent banner.
+    trackPageView(pathname);
+  }, [pathname]);
 
   return (
+
 
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen overflow-x-hidden">
@@ -123,6 +123,8 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <CookieConsent />
+
       </div>
     </QueryClientProvider>
   );
