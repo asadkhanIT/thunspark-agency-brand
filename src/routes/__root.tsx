@@ -6,13 +6,16 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { initAnalytics, trackPageView } from "../lib/analytics";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+
 
 function NotFoundComponent() {
   return (
@@ -96,7 +99,18 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const routerState = useRouterState({ select: (s) => s.location.pathname });
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  useEffect(() => {
+    trackPageView(routerState);
+  }, [routerState]);
+
   return (
+
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen overflow-x-hidden">
         {/* Ambient background glow */}
