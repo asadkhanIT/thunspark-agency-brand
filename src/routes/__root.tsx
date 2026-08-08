@@ -99,17 +99,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const routerState = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
-    initAnalytics();
-  }, []);
-
-  useEffect(() => {
-    trackPageView(routerState);
-  }, [routerState]);
+    // No-ops until the user accepts cookies in the consent banner.
+    trackPageView(pathname);
+  }, [pathname]);
 
   return (
+
 
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen overflow-x-hidden">
