@@ -96,7 +96,18 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const routerState = useRouterState({ select: (s) => s.location.pathname });
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  useEffect(() => {
+    trackPageView(routerState);
+  }, [routerState]);
+
   return (
+
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen overflow-x-hidden">
         {/* Ambient background glow */}
